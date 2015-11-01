@@ -4,6 +4,7 @@
 #define MAXLINE 1000
 #define MAXLENTH 1000
 char *lineptr[MAXLINE];
+char *p;
 void qsorts(char *v[],int left,int right);
 
 int getlines(char line[],int max);
@@ -14,27 +15,26 @@ main(int argc,char *argv[]){
 	int nlines,tailnum=10;
 	
 	int i;
-/*	for(i=1;i<argc;i++)
-		printf("%s%s",argv[i],(i<argc-1)?" " :"");*/
-	if(argc<=1)
+	if(argc<=1)						//判断输入参数
 		tailnum=10;
 	else if(argc==2&&(*++argv)[0]=='-') {
 		tailnum=atoi(argv[0]+1);
 	}else {
 		printf("usage error");
 	}
-		printf("%d",tailnum);
 	nlines=readlines(lineptr,MAXLINE);
+	if(nlines<tailnum)					//使参数变得合法
+		tailnum=nlines;
+	if(tailnum>MAXLINE)
+		tailnum=MAXLINE;
 	writelines(lineptr,nlines,tailnum);
-	
 
 }
 
-int readlines(char *lineptr[],int max){
+int readlines(char *lineptr[],int max){				//新建readline来读取输入内容
 	int len,nlines=0,i;
-	char *p;
 	char line[MAXLENTH];
-	p=calloc(MAXLINE,MAXLENTH);
+	p=calloc(MAXLINE,MAXLENTH);				//分配一片内存来容纳输入内容
 	for(i=0;i<=MAXLINE;i++)
 		lineptr[i]=NULL;
 		i=0;
@@ -57,13 +57,6 @@ void writelines(char *lineptr[],int nlines,int tailnum){
 
 
 
-void swap(char *v[],int i ,int j){
-	char *temp;
-	temp=v[i];
-	v[i]=v[j];
-	v[j]=temp;
-
-}
 
 int getlines(char s[], int lim){
         int c,i;
@@ -74,4 +67,7 @@ int getlines(char s[], int lim){
                 s[i++]=c;
         s[i]='\0';
         return i;
-}	
+}
+
+/*删除了之前多次修改所遗留的测试函数以及没有用到的功能函数,
+ *加入了参数合法性的判断*/	
