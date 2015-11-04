@@ -14,7 +14,7 @@ int readlines(char *lineptr[],int max);
 void writelines(char *lineptr[],int nlines);
 int option;
 
-main(int argc,char *argv[]){
+int main(int argc,char *argv[]){
 	char *lineptr[MAXLINE];
 	int nlines;
 	int stal,endl;
