@@ -6,7 +6,8 @@ char reverse(char* str,int i){		//reverse函数，输入字符串变量，开始
 	int k,j,len;
 	len=strlen(str);
 	char temp;
-	for(k=0;str[k]!='\0';k++){j=k;}	//用来计算有效的字符
+	for(k=0;str[k]!='\0';k++){
+		j=k;}	//用来计算有效的字符
 	if(i<j-i){
 	temp=str[i];
 	str[i]=str[j-i];
