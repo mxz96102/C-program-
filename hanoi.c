@@ -1,7 +1,6 @@
 #include <stdio.h>
 void hanoi(int n,char t1,char t2,char t3);
-
-main(void){
+void main(void){
         int n;
         printf("please in put the num of the first tower");
         scanf("%d",&n);
