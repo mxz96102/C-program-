@@ -9,7 +9,7 @@ void qsorts(char *v[],int left,int right);
 
 int getlines(char line[],int max);
 
-main(int argc,char *argv[]){
+void main(int argc,char *argv[]){
 	int readlines(char *lineptr[],int max);
 	void writelines(char *lineptr[],int nlines,int tailnum);
 	int nlines,tailnum=10;
