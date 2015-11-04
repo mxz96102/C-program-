@@ -93,8 +93,8 @@ main(int argc,char *argv[]){
 					qsorts((void **) lineptr,stal,endl,(int (*)(void*,void*))dcmp);
 					break;
 				case 5:
-                                        qsorts((void **) lineptr,stal,endl,(int (*)(void*,void*))strcmp);
-                                        break;
+                    qsorts((void **) lineptr,stal,endl,(int (*)(void*,void*))strcmp);
+                    break;
 				case 6:
 					qsorts((void **) lineptr,stal,endl,(int (*)(void*,void*))fdcmp);
 					break;
@@ -198,23 +198,23 @@ int fdcmp(char *s1,char *s2){
         t1=*s1;
         t2=*s2;
 	if(isupper(t1))
-                        t1=tolower(t1);
-                if(isupper(t2))
-                        t2=tolower(t2);
+        t1=tolower(t1);
+    if(isupper(t2))
+        t2=tolower(t2);
 
-        if(ispunct(t1)){
-                s1++;
-                return; }
-        if(ispunct(t2)){
-                s2++;
-                return;}
+    if(ispunct(t1)){
+        s1++;
+        return; }
+    if(ispunct(t2)){
+        s2++;
+        return;}
 
-        if (t1<t2)
-                return -1;
-        else if(t1>t2)
-                return 1;
-        else
-                return 0;
+    if (t1<t2)
+        return -1;
+    else if(t1>t2)
+        return 1;
+    else
+        return 0;
 
 }
 
